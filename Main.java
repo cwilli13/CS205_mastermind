@@ -13,7 +13,11 @@ public class Main{
 		
 		String userName = userInput.nextLine();
 
-		Player p1 = new Player(userName, userWins, userLosses);
+		System.out.println("Choose a difficulty:\n1 = Easy\n2 = Hard");
+
+		String diffString = userInput.nextLine();
+		int userDifficulty = Integer.parseInt(diffString);
+		Player p1 = new Player(userName, userWins, userLosses, userDifficulty);
 
 		/* test player functions */
 		/*System.out.println("Test functions:");
