@@ -12,16 +12,20 @@ import java.util.Scanner;
 public class Player{
 
 	private String name;
-	private int wins = 0;
-	private int losses = 0;
+	private int wins;
+	private int losses;
 
 	Scanner userInput = new Scanner(System.in);
 
-	public Player(){
+	public Player(String userName, int userWins, int userLosses){
 		System.out.println("Creating Player...");
-		
-		/* Get user's name */
-		setName();
+		System.out.println("Player created.");
+
+
+		name = userName;
+		wins = userWins;
+		losses = userLosses;
+
 
 		System.out.println("\n\n\nWelcome to Mastermind " + name + ".");
 		System.out.println("\nYour record:");
@@ -30,32 +34,24 @@ public class Player{
 
 	}
 
-	public String setName(){
-		System.out.println("Enter Your Name:");
-		name = userInput.nextLine();
-
-		return name;
+	public void setName(String newName){
+		name = newName;
 	}
 
 	public String getName(){
-
 		return name;
 	}
 
-	public int setWins(){
+	public void addWin(){
 		wins++;
-
-		return wins;
 	}
 
 	public int getWins(){
 		return wins;
 	}
 
-	public int setLosses(){
+	public void addLoss(){
 		losses++;
-
-		return losses;
 	}
 	public int getLosses(){
 		return losses;
